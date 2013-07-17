@@ -1,0 +1,32 @@
+<idea-plugin version="2">
+    <name>KohanaStorm</name>
+    <description>Kohana framework integration for PhpStorm<br/>
+        Authors: zenden2k@gmail.com
+    </description>
+    <version>0.1</version>
+    <vendor url="http://zenden.ws/" email="zenden2k@gmail.com">zenden.ws</vendor>
+    <idea-version since-build="8000"/>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+      <action id="JumpToKohanaController22" class="ws.zenden.kohanastorm.JumpToKohanaController" text="Jump to Kohana Controller">
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift p"/>
+      </action>
+    <!-- Add your actions here -->
+  </actions>
+
+    <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <psi.referenceContributor implementation="ws.zenden.kohanastorm.MyPsiReferenceContributor"/>
+    <projectConfigurable  implementation="ws.zenden.kohanastorm.KohanaStormSettingsPage"><loadForDefaultProject/></projectConfigurable >
+    <!-- Add your extensions here -->
+</extensions>
+</idea-plugin>
