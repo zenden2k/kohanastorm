@@ -11,18 +11,22 @@ It provides two simple features:
 Quickly navigate to your controller's action by URL.
 In order to enable this feature, you need to add the following code in the end of your boostrap.php:
 
+```php
 if ( !empty( $_GET['ks_secret_key'] ) &&  ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' || $_GET['ks_secret_key'] == 'your Secret Key' ) ){
     $req = Request::factory();
     die( 'KS;1;'.$req->directory().';'.$req->controller() .';'.$req->action() );
 }
+```
 
 For older versions (Kohana 3.0):
 
+```php
 if ( ( !empty( $_GET['ks_enable'] ) &&   $_SERVER['REMOTE_ADDR'] == '127.0.0.1' )
     ||  !empty( $_GET['ks_secret_key']) && $_GET['ks_secret_key'] == 'your secret key' ) {
     $req = Request::instance();
     die( 'KS;1;'.$req->directory.';'.$req->controller .';'.$req->action );
 }
+```
 
 Now you can press Ctrl+Shift+P in your project, paste url into the text box and your controller class will be opened in code editor.
 Enjoy!
