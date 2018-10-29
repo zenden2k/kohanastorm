@@ -1,3 +1,5 @@
+package ws.zenden.kohanastorm;
+
 import javax.swing.*;
 
 /**

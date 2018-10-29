@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>ws.zenden.kohanastorm</id>
+  <name>KohanaStorm</name>
+  <version>0.2</version>
+  <vendor email="zenden2k@yandex.ru" url="http://zenden2k.atwebpages.com/">Sergey Svistunov</vendor>
+
+  <description><![CDATA[
+  Kohana 3 helper plugin for PHPStorm<br>
+  It provides two simple features:<br>
+  - Navigate to a template from controller (from <i>View::factory('...')</i> )<br>
+  - Navigate to a controller by URL<br>
+    ]]></description>
+
+  <!--<change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>-->
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <psi.referenceContributor implementation="ws.zenden.kohanastorm.MyPsiReferenceContributor"/>
+    <projectConfigurable  implementation="ws.zenden.kohanastorm.KohanaStormSettingsPage"></projectConfigurable>
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="JumpToKohanaController22" class="ws.zenden.kohanastorm.JumpToKohanaController" text="Jump to Kohana Controller">
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift p"/>
+    </action>
+    <!-- Add your actions here -->
+  </actions>
+  <depends>com.intellij.modules.platform</depends>
+
+</idea-plugin>

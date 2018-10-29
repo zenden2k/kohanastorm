@@ -714,7 +714,7 @@ public abstract class MyPopupBase {
         close(false);
         return Boolean.TRUE;
       }
-    }).setFocusable(true).setRequestFocus(true).setForceHeavyweight(true).setModalContext(false).setCancelOnClickOutside(false);
+    }).setFocusable(true).setRequestFocus(true)./*setForceHeavyweight(true).*/setModalContext(false).setCancelOnClickOutside(false);
 
     Point point = new Point(x, y);
     SwingUtilities.convertPointToScreen(point, layeredPane);
@@ -727,7 +727,7 @@ public abstract class MyPopupBase {
     final boolean previousUpdate;
     final DaemonCodeAnalyzer daemonCodeAnalyzer = DaemonCodeAnalyzer.getInstance(myProject);
     if (daemonCodeAnalyzer != null) {
-      previousUpdate = ((DaemonCodeAnalyzerImpl)daemonCodeAnalyzer).isUpdateByTimerEnabled();
+      previousUpdate = /*((DaemonCodeAnalyzerImpl)daemonCodeAnalyzer).isUpdateByTimerEnabled();*/false;
       daemonCodeAnalyzer.setUpdateByTimerEnabled(false);
     }
     else {

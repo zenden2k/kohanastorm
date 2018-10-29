@@ -28,7 +28,7 @@ if ( ( !empty( $_GET['ks_enable'] ) &&   $_SERVER['REMOTE_ADDR'] == '127.0.0.1' 
 }
 ```
 
-Now you can press Ctrl+Shift+P in your project, paste url into the text box and your controller class will be opened in code editor.
+Now you can press Ctrl+Shift+P in your project, paste URL into the text box and your controller class will be opened in code editor.
 Enjoy!
 
-You can get compiled jar here: https://image-uploader.googlecode.com/files/KohanaStorm.jar
+You can download compiled jar at releases section.
